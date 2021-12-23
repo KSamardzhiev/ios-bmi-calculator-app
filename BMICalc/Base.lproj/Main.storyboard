@@ -120,9 +120,80 @@
             </objects>
             <point key="canvasLocation" x="18.22429906542056" y="86.177105831533481"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="fLm-TY-InT">
+            <objects>
+                <viewController id="ZcG-a6-f8W" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Te-2R-Dle">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bmiBackground-r" translatesAutoresizingMaskIntoConstraints="NO" id="eVh-Us-MMX">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-69-GJF">
+                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-cy-HEy">
+                                        <rect key="frame" x="119.66666666666667" y="0.0" width="188.66666666666663" height="384"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                        <color key="textColor" systemColor="systemIndigoColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpC-BD-Qp1">
+                                        <rect key="frame" x="167.33333333333334" y="394" width="93.333333333333343" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="OfY-yd-9ad"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                        <color key="textColor" systemColor="systemIndigoColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Recomendation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNp-w2-etm">
+                                        <rect key="frame" x="85" y="464" width="258.33333333333331" height="324"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                                        <color key="textColor" systemColor="systemIndigoColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJW-VM-nQF">
+                                        <rect key="frame" x="10" y="798" width="408" height="50"/>
+                                        <color key="backgroundColor" red="0.59737265110000004" green="0.68186682460000003" blue="0.72793179750000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="866-Uf-H7H"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Recalculate" cornerStyle="capsule">
+                                            <fontDescription key="titleFontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="30"/>
+                                            <color key="baseForegroundColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bpC-BD-Qp1" firstAttribute="centerY" secondItem="Pbg-69-GJF" secondAttribute="centerY" id="51I-yM-BGD"/>
+                                    <constraint firstItem="RJW-VM-nQF" firstAttribute="leading" secondItem="Pbg-69-GJF" secondAttribute="leading" constant="10" id="N8u-Mh-htv"/>
+                                    <constraint firstAttribute="trailing" secondItem="RJW-VM-nQF" secondAttribute="trailing" constant="10" id="iLs-cW-rMY"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vE5-Iz-oXC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pbg-69-GJF" firstAttribute="top" secondItem="vE5-Iz-oXC" secondAttribute="top" id="J1z-yw-PFG"/>
+                            <constraint firstItem="Pbg-69-GJF" firstAttribute="leading" secondItem="vE5-Iz-oXC" secondAttribute="leading" id="bak-W9-ogs"/>
+                            <constraint firstItem="vE5-Iz-oXC" firstAttribute="bottom" secondItem="Pbg-69-GJF" secondAttribute="bottom" id="gN2-lP-yJK"/>
+                            <constraint firstItem="vE5-Iz-oXC" firstAttribute="trailing" secondItem="Pbg-69-GJF" secondAttribute="trailing" id="lpH-aJ-XYa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Y5-VF-GSq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.63551401869154" y="86.177105831533481"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bmiBackground" width="640" height="426.66665649414062"/>
+        <image name="bmiBackground-r" width="640" height="426"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
