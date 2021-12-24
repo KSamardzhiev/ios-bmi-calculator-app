@@ -15,25 +15,26 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
     
-    var bmiValue: String?
+    var calculatorBrain = CalculatorBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        calculatorBrain.height = heightSlider.value
+        calculatorBrain.weight = weightSlider.value
     }
 
     @IBAction func heightSliderChanged(_ sender: UISlider) {
-        heightLabel.text = String(format: "%.2fm", sender.value)
+        calculatorBrain.height = sender.value
+        heightLabel.text = calculatorBrain.getHeight()
     }
     
     @IBAction func weightSliderChanged(_ sender: UISlider) {
-        weightLabel.text = String(format: "%.1fkg", sender.value)
+        calculatorBrain.weight = sender.value
+        weightLabel.text = calculatorBrain.getWeight()
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        let bmiValue = weightSlider.value / pow(heightSlider.value, 2)
-        print(bmiValue)
-        self.bmiValue = String(format: "%.1f", bmiValue)
+        calculatorBrain.calculateBmi()
     
 //        let secondVC = SecondViewController()
 //        secondVC.bmiValue = String(format: "%.1f", bmiValue)
@@ -46,7 +47,8 @@ class CalculateViewController: UIViewController {
         
         if segue.identifier == "goToResult" {
             let resultVC = segue.destination as! ResultViewController
-            resultVC.bmiValue = self.bmiValue
+            resultVC.bmiValue = calculatorBrain.getBmiValue()
+            resultVC.adviceValue = calculatorBrain.getAdvice()
         }
         
     }
