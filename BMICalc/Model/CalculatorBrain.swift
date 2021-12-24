@@ -29,9 +29,9 @@ struct CalculatorBrain {
     }
     
     func getAdvice() -> String {
-        if bmiValue! < 20 {
+        if bmiValue! < 18.5 {
             return "Eat some snack!"
-        } else if bmiValue! < 30 {
+        } else if bmiValue! < 24.9 {
             return "You are perfect!"
         } else {
             return "Do some excercises!"
