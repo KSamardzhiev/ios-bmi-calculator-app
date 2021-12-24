@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculate View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BMICalc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculateViewController" customModule="BMICalc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,6 +51,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="DBt-o1-bKM"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="heightSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="CsQ-Nj-cn4"/>
+                                        </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="250" translatesAutoresizingMaskIntoConstraints="NO" id="vXv-Xu-hc4">
                                         <rect key="frame" x="10" y="727.66666666666663" width="408" height="20.333333333333371"/>
@@ -75,6 +78,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="vo1-aX-ynH"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="weightSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="pdb-1j-5TZ"/>
+                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyO-LZ-Bl6">
                                         <rect key="frame" x="10" y="798" width="408" height="50"/>
@@ -87,6 +93,9 @@
                                             <fontDescription key="titleFontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="30"/>
                                             <color key="baseForegroundColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sJS-Vi-dVz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -115,34 +124,41 @@
                             <constraint firstItem="sI4-9O-4Dj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ytV-S2-ZaV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightLabel" destination="oPp-JU-aWr" id="B58-P0-N7O"/>
+                        <outlet property="heightSlider" destination="rZO-SY-7Td" id="zTV-74-8pb"/>
+                        <outlet property="weightLabel" destination="BjA-T5-nHD" id="YC2-fN-kTQ"/>
+                        <outlet property="weightSlider" destination="mcK-kg-hhr" id="9ck-g4-HDQ"/>
+                        <segue destination="ZcG-a6-f8W" kind="presentation" identifier="goToResult" id="zvi-aM-jKn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.22429906542056" y="86.177105831533481"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="fLm-TY-InT">
             <objects>
-                <viewController id="ZcG-a6-f8W" sceneMemberID="viewController">
+                <viewController id="ZcG-a6-f8W" customClass="ResultViewController" customModule="BMICalc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Te-2R-Dle">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bmiBackground-r" translatesAutoresizingMaskIntoConstraints="NO" id="eVh-Us-MMX">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-69-GJF">
-                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-69-GJF">
+                                <rect key="frame" x="85" y="336" width="258.33333333333331" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-cy-HEy">
-                                        <rect key="frame" x="119.66666666666667" y="0.0" width="188.66666666666663" height="384"/>
+                                        <rect key="frame" x="34.666666666666671" y="0.0" width="188.66666666666663" height="60"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                                         <color key="textColor" systemColor="systemIndigoColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpC-BD-Qp1">
-                                        <rect key="frame" x="167.33333333333334" y="394" width="93.333333333333343" height="60"/>
+                                        <rect key="frame" x="82.333333333333343" y="70" width="93.333333333333343" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="OfY-yd-9ad"/>
                                         </constraints>
@@ -151,40 +167,43 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Recomendation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNp-w2-etm">
-                                        <rect key="frame" x="85" y="464" width="258.33333333333331" height="324"/>
+                                        <rect key="frame" x="0.0" y="140" width="258.33333333333331" height="60"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                         <color key="textColor" systemColor="systemIndigoColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJW-VM-nQF">
-                                        <rect key="frame" x="10" y="798" width="408" height="50"/>
-                                        <color key="backgroundColor" red="0.59737265110000004" green="0.68186682460000003" blue="0.72793179750000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="866-Uf-H7H"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Recalculate" cornerStyle="capsule">
-                                            <fontDescription key="titleFontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="30"/>
-                                            <color key="baseForegroundColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </buttonConfiguration>
-                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="bpC-BD-Qp1" firstAttribute="centerY" secondItem="Pbg-69-GJF" secondAttribute="centerY" id="51I-yM-BGD"/>
-                                    <constraint firstItem="RJW-VM-nQF" firstAttribute="leading" secondItem="Pbg-69-GJF" secondAttribute="leading" constant="10" id="N8u-Mh-htv"/>
-                                    <constraint firstAttribute="trailing" secondItem="RJW-VM-nQF" secondAttribute="trailing" constant="10" id="iLs-cW-rMY"/>
-                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJW-VM-nQF">
+                                <rect key="frame" x="10" y="788" width="408" height="50"/>
+                                <color key="backgroundColor" red="0.59737265110000004" green="0.68186682460000003" blue="0.72793179750000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="866-Uf-H7H"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Recalculate" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="30"/>
+                                    <color key="baseForegroundColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="ZcG-a6-f8W" eventType="touchUpInside" id="6Jm-tP-a0f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vE5-Iz-oXC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Pbg-69-GJF" firstAttribute="top" secondItem="vE5-Iz-oXC" secondAttribute="top" id="J1z-yw-PFG"/>
-                            <constraint firstItem="Pbg-69-GJF" firstAttribute="leading" secondItem="vE5-Iz-oXC" secondAttribute="leading" id="bak-W9-ogs"/>
-                            <constraint firstItem="vE5-Iz-oXC" firstAttribute="bottom" secondItem="Pbg-69-GJF" secondAttribute="bottom" id="gN2-lP-yJK"/>
-                            <constraint firstItem="vE5-Iz-oXC" firstAttribute="trailing" secondItem="Pbg-69-GJF" secondAttribute="trailing" id="lpH-aJ-XYa"/>
+                            <constraint firstItem="RJW-VM-nQF" firstAttribute="leading" secondItem="vE5-Iz-oXC" secondAttribute="leading" constant="10" id="DwR-HW-YTf"/>
+                            <constraint firstItem="Pbg-69-GJF" firstAttribute="centerY" secondItem="2Te-2R-Dle" secondAttribute="centerY" id="H9W-gb-la0"/>
+                            <constraint firstItem="Pbg-69-GJF" firstAttribute="centerX" secondItem="2Te-2R-Dle" secondAttribute="centerX" id="MwS-Cm-357"/>
+                            <constraint firstItem="vE5-Iz-oXC" firstAttribute="trailing" secondItem="RJW-VM-nQF" secondAttribute="trailing" constant="10" id="Z4a-jd-db3"/>
+                            <constraint firstItem="vE5-Iz-oXC" firstAttribute="bottom" secondItem="RJW-VM-nQF" secondAttribute="bottom" id="lRl-ig-pdV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="qNp-w2-etm" id="UD0-pC-qCO"/>
+                        <outlet property="bmiLabel" destination="bpC-BD-Qp1" id="uoL-qv-9F4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Y5-VF-GSq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,7 +212,7 @@
     </scenes>
     <resources>
         <image name="bmiBackground" width="640" height="426.66665649414062"/>
-        <image name="bmiBackground-r" width="640" height="426"/>
+        <image name="bmiBackground-r" width="640" height="426.66665649414062"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

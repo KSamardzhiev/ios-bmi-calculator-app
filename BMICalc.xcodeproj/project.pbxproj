@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F858A15D27750FC600D8DB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A15C27750FC600D8DB97 /* AppDelegate.swift */; };
 		F858A15F27750FC600D8DB97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A15E27750FC600D8DB97 /* SceneDelegate.swift */; };
-		F858A16127750FC600D8DB97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A16027750FC600D8DB97 /* ViewController.swift */; };
+		F858A16127750FC600D8DB97 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A16027750FC600D8DB97 /* CalculateViewController.swift */; };
 		F858A16427750FC600D8DB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F858A16227750FC600D8DB97 /* Main.storyboard */; };
 		F858A16727750FC600D8DB97 /* BMICalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F858A16527750FC600D8DB97 /* BMICalc.xcdatamodeld */; };
 		F858A16927750FCA00D8DB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F858A16827750FCA00D8DB97 /* Assets.xcassets */; };
@@ -17,6 +17,8 @@
 		F858A17727750FCA00D8DB97 /* BMICalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A17627750FCA00D8DB97 /* BMICalcTests.swift */; };
 		F858A18127750FCA00D8DB97 /* BMICalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A18027750FCA00D8DB97 /* BMICalcUITests.swift */; };
 		F858A18327750FCA00D8DB97 /* BMICalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A18227750FCA00D8DB97 /* BMICalcUITestsLaunchTests.swift */; };
+		F858A1962775DB6000D8DB97 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A1952775DB6000D8DB97 /* SecondViewController.swift */; };
+		F858A1982775E0F700D8DB97 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A1972775E0F700D8DB97 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,7 @@
 		F858A15927750FC600D8DB97 /* BMICalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMICalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F858A15C27750FC600D8DB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F858A15E27750FC600D8DB97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F858A16027750FC600D8DB97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F858A16027750FC600D8DB97 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		F858A16327750FC600D8DB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F858A16627750FC600D8DB97 /* BMICalc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BMICalc.xcdatamodel; sourceTree = "<group>"; };
 		F858A16827750FCA00D8DB97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		F858A17C27750FCA00D8DB97 /* BMICalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMICalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F858A18027750FCA00D8DB97 /* BMICalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalcUITests.swift; sourceTree = "<group>"; };
 		F858A18227750FCA00D8DB97 /* BMICalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F858A1952775DB6000D8DB97 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F858A1972775E0F700D8DB97 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +107,8 @@
 			children = (
 				F858A15C27750FC600D8DB97 /* AppDelegate.swift */,
 				F858A15E27750FC600D8DB97 /* SceneDelegate.swift */,
-				F858A16027750FC600D8DB97 /* ViewController.swift */,
-				F858A16227750FC600D8DB97 /* Main.storyboard */,
+				F858A19127752AA900D8DB97 /* View */,
+				F858A19227752AB600D8DB97 /* Controllers */,
 				F858A16827750FCA00D8DB97 /* Assets.xcassets */,
 				F858A16A27750FCA00D8DB97 /* LaunchScreen.storyboard */,
 				F858A16D27750FCA00D8DB97 /* Info.plist */,
@@ -128,6 +132,24 @@
 				F858A18227750FCA00D8DB97 /* BMICalcUITestsLaunchTests.swift */,
 			);
 			path = BMICalcUITests;
+			sourceTree = "<group>";
+		};
+		F858A19127752AA900D8DB97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F858A16227750FC600D8DB97 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F858A19227752AB600D8DB97 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F858A16027750FC600D8DB97 /* CalculateViewController.swift */,
+				F858A1952775DB6000D8DB97 /* SecondViewController.swift */,
+				F858A1972775E0F700D8DB97 /* ResultViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F858A16127750FC600D8DB97 /* ViewController.swift in Sources */,
+				F858A16127750FC600D8DB97 /* CalculateViewController.swift in Sources */,
 				F858A15D27750FC600D8DB97 /* AppDelegate.swift in Sources */,
 				F858A15F27750FC600D8DB97 /* SceneDelegate.swift in Sources */,
+				F858A1962775DB6000D8DB97 /* SecondViewController.swift in Sources */,
 				F858A16727750FC600D8DB97 /* BMICalc.xcdatamodeld in Sources */,
+				F858A1982775E0F700D8DB97 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
